@@ -1,0 +1,53 @@
+<div style="max-width:900px;margin:0 auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+    <h2 style="margin:0;color:var(--bg)">User Dashboard</h2>
+    <button class="btn" (click)="openAddUser()">Add User</button>
+  </div>
+
+  <div style="display:flex;gap:20px;align-items:flex-start">
+    <div style="flex:1">
+      <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center">
+        <input class="input" placeholder="Search name, email, role" [(ngModel)]="filterText" style="flex:1" />
+        <select class="input" [(ngModel)]="pageSize" style="width:120px">
+          <option [ngValue]="5">5 / page</option>
+          <option [ngValue]="10">10 / page</option>
+          <option [ngValue]="20">20 / page</option>
+        </select>
+      </div>
+
+      <div *ngIf="loading" style="display:flex;align-items:center;gap:8px;padding:12px">
+        <div class="spinner" style="width:24px;height:24px;border:4px solid #eee;border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite"></div>
+        <div>Loading...</div>
+      </div>
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="8">
+        <thead>
+          <tr style="text-align:left;color:var(--bg)">
+            <th>Name</th><th>Email</th><th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of displayedUsers">
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.role}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="width:300px">
+      <canvas #chartCanvas width="300" height="300"></canvas>
+    </div>
+  </div>
+
+  <ng-template #formAnchor></ng-template>
+  <div style="display:flex;justify-content:center;margin-top:12px;gap:8px;align-items:center">
+    <button class="btn" (click)="goPage(page-1)" [disabled]="page<=1">Prev</button>
+    <div>Page {{page}} / {{totalPages}}</div>
+    <button class="btn" (click)="goPage(page+1)" [disabled]="page>=totalPages">Next</button>
+  </div>
+
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</div>
