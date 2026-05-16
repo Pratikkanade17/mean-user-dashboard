@@ -1,0 +1,31 @@
+
+Initial Chunk Files   | Names                         |  Raw Size | Estimated Transfer Size
+main.js               | main                          | 249.52 kB |                70.77 kB
+polyfills.js          | polyfills                     | 109.51 kB |                33.49 kB
+styles.css, styles.js | styles                        |  63.63 kB |                19.96 kB
+runtime.js            | runtime                       |   2.77 kB |                 1.28 kB
+
+| Initial Total                 | 425.43 kB |               125.49 kB
+
+Lazy Chunk Files      | Names                         |  Raw Size | Estimated Transfer Size
+58.js                 | chart-js-auto                 | 192.60 kB |                57.29 kB
+502.js                | user-form-user-form-component |   2.44 kB |               943 bytes
+
+Build at: 2026-05-16T06:47:03.333Z - Hash: 2234775a37727ae1 - Time: 39829ms
+
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+
+
+√ Compiled successfully.
+
+6 unchanged chunks
+
+Build at: 2026-05-16T06:52:10.598Z - Hash: 2234775a37727ae1 - Time: 1437ms
+
+√ Compiled successfully.
+
+6 unchanged chunks
+
+Build at: 2026-05-16T06:52:11.723Z - Hash: 2234775a37727ae1 - Time: 1081ms
+
+√ Compiled successfully.
